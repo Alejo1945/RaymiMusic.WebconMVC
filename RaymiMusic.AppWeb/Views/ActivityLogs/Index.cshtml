@@ -1,0 +1,23 @@
+﻿@model IEnumerable<RaymiMusic.Modelos.ActivityLog>
+
+<h2>Historial de Actividad</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Usuario</th>
+            <th>Acción</th>
+            <th>Fecha</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var log in Model)
+        {
+            <tr>
+                <td>@log.Usuario</td>
+                <td>@log.Accion</td>
+                <td>@log.Fecha.ToString("yyyy-MM-dd HH:mm")</td>
+            </tr>
+        }
+    </tbody>
+</table>

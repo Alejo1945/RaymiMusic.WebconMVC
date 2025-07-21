@@ -1,0 +1,21 @@
+﻿@model IEnumerable<dynamic>
+
+<h2>Estadísticas de Usuarios</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Plan</th>
+            <th>Cantidad de Usuarios</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Plan</td>
+                <td>@item.Count</td>
+            </tr>
+        }
+    </tbody>
+</table>

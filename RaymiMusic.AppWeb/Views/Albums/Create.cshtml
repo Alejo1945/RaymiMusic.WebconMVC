@@ -1,0 +1,41 @@
+﻿@model RaymiMusic.AppWeb.Models.AlbumCreateVM
+@using RaymiMusic.Modelos
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Nuevo álbum";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form asp-action="Create" method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div class="mb-3">
+        <label asp-for="Titulo" class="form-label">Título</label>
+        <input asp-for="Titulo" class="form-control" />
+        <span asp-validation-for="Titulo" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="FechaLanzamiento" class="form-label">Fecha de lanzamiento</label>
+        <input asp-for="FechaLanzamiento" class="form-control" type="date" />
+        <span asp-validation-for="FechaLanzamiento" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="ArtistaId" class="form-label">Artista</label>
+        <select asp-for="ArtistaId" class="form-select" asp-items="Model.Artistas">
+            <option value="">-- Selecciona un Artista --</option>
+        </select>
+        <span asp-validation-for="ArtistaId" class="text-danger"></span>
+    </div>
+
+
+
+    <button type="submit" class="btn btn-success">Guardar</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+
+</form>
+
+
