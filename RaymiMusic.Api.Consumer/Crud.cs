@@ -89,4 +89,5 @@ public static class Crud<T> where T : class
         if (!resp.IsSuccessStatusCode)
             throw new Exception($"API error: {(int)resp.StatusCode} {resp.ReasonPhrase}");
     }
+
 }
